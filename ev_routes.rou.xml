@@ -1,0 +1,73 @@
+import random
+import xml.etree.ElementTree as ET
+
+# Configuration
+num_vehicles = 2000
+routes_file = "../routes/ev_routes.rou.xml"
+flow_file = "../routes/flow_definitions.xml"
+edge_list = ["gneE3", "gneE5", "gneE9", "gneE12", "gneE15", "gneE17", "gneE20", "gneE25"]
+vehicle_types = ["EV_A", "EV_B"]
+
+def create_route(id, depart, from_edge, to_edge, veh_type):
+    vehicle = ET.Element("vehicle", {
+        "id": f"ev_{id}",
+        "type": veh_type,
+        "depart": str(depart)
+    })
+    route = ET.SubElement(vehicle, "route", {
+        "edges": f"{from_edge} {to_edge}"
+    })
+    return vehicle
+
+def generate_routes():
+    print(f"Generating {num_vehicles} EV routes...")
+    root = ET.Element("routes")
+    # Define vehicle types
+    for veh in vehicle_types:
+        ET.SubElement(root, "vType", {
+            "id": veh,
+            "accel": "2.0",
+            "decel": "4.5",
+            "sigma": "0.5",
+            "length": "5.0",
+            "minGap": "2.5",
+            "maxSpeed": "25.0",
+            "guiShape": "electric"
+        })
+
+    # Define individual EV routes
+    for i in range(num_vehicles):
+        depart_time = random.uniform(0, 3600)
+        from_edge = random.choice(edge_list)
+        to_edge = random.choice([e for e in edge_list if e != from_edge])
+        veh_type = random.choice(vehicle_types)
+        vehicle = create_route(i, round(depart_time, 2), from_edge, to_edge, veh_type)
+        root.append(vehicle)
+
+    # Save to routes file
+    tree = ET.ElementTree(root)
+    tree.write(routes_file, encoding="UTF-8", xml_declaration=True)
+    print(f"Routes written to {routes_file}")
+
+def generate_flow_definitions():
+    print("Generating flow definitions...")
+    root = ET.Element("flows")
+    for i in range(0, 3600, 300):
+        flow = ET.SubElement(root, "flow", {
+            "id": f"flow_{i}",
+            "type": "EV_A",
+            "begin": str(i),
+            "end": str(i + 300),
+            "from": random.choice(edge_list),
+            "to": random.choice(edge_list),
+            "number": str(random.randint(40, 80))
+        })
+
+    # Save to flow file
+    tree = ET.ElementTree(root)
+    tree.write(flow_file, encoding="UTF-8", xml_declaration=True)
+    print(f"Flow definitions written to {flow_file}")
+
+if __name__ == "__main__":
+    generate_routes()
+    generate_flow_definitions()
