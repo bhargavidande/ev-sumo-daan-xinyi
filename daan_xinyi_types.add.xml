@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+
+    <!-- Base electric vehicle type -->
+    <vType id="EV_base" vClass="passenger" accel="1.2" decel="4.5" length="4.5"
+           minGap="2.5" maxSpeed="13.9" guiShape="passenger"
+           emissionClass="Zero/default" color="0,1,0"/>
+
+    <!-- EV types with variation in acceleration and battery capacity -->
+
+    <!-- Example batch 1 -->
+    <vType id="EV_type_001" vClass="passenger" accel="1.1" decel="4.2" length="4.3"
+           minGap="2.3" maxSpeed="13.5" guiShape="passenger" emissionClass="Zero/default"
+           color="0,0.6,0"/>
+    
+    <vType id="EV_type_002" vClass="passenger" accel="1.3" decel="4.6" length="4.6"
+           minGap="2.6" maxSpeed="14.0" guiShape="passenger" emissionClass="Zero/default"
+           color="0,0.7,0"/>
+
+    <!-- Example batch 2 (Charging capable EVs) -->
+    <vType id="EV_charging_001" vClass="passenger" accel="1.2" decel="4.5" length="4.5"
+           minGap="2.5" maxSpeed="13.9" guiShape="passenger" emissionClass="Zero/default"
+           color="0,0.8,0" stoppingPlace="true"/>
+
+    <vType id="EV_charging_002" vClass="passenger" accel="1.0" decel="4.0" length="4.4"
+           minGap="2.4" maxSpeed="13.7" guiShape="passenger" emissionClass="Zero/default"
+           color="0,0.9,0" stoppingPlace="true"/>
+
+
+</additional>
+
+
+with open("daan_xinyi_types.add.xml", "w") as f:
+    f.write('<?xml version="1.0" encoding="UTF-8"?>\n<additional>\n')
+    for i in range(1, 2001):
+        f.write(f'''<vType id="EV_type_{i:04d}" vClass="passenger" accel="{1.0 + (i % 5) * 0.05}"
+    decel="4.0" length="4.5" minGap="2.5" maxSpeed="13.9"
+    guiShape="passenger" emissionClass="Zero/default" color="0,{0.5 + (i % 10)/20.0},0"/>\n''')
+    f.write('</additional>')
+
