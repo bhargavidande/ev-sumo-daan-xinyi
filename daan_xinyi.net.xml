@@ -1,0 +1,53 @@
+<net version="1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <!-- Nodes: Intersections -->
+    <node id="J1" x="0.0" y="0.0" type="traffic_light"/>
+    <node id="J2" x="200.0" y="0.0" type="traffic_light"/>
+    <node id="J3" x="400.0" y="0.0" type="traffic_light"/>
+    <node id="J4" x="0.0" y="200.0" type="traffic_light"/>
+    <node id="J5" x="200.0" y="200.0" type="traffic_light"/>
+    <node id="J6" x="400.0" y="200.0" type="traffic_light"/>
+    <node id="J7" x="0.0" y="400.0" type="traffic_light"/>
+    <node id="J8" x="200.0" y="400.0" type="traffic_light"/>
+    <node id="J9" x="400.0" y="400.0" type="traffic_light"/>
+
+    <!-- Edges: Roads between intersections -->
+    <edge id="E1" from="J1" to="J2">
+        <lane id="E1_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E2" from="J2" to="J3">
+        <lane id="E2_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E3" from="J4" to="J5">
+        <lane id="E3_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E4" from="J5" to="J6">
+        <lane id="E4_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E5" from="J7" to="J8">
+        <lane id="E5_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E6" from="J8" to="J9">
+        <lane id="E6_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E7" from="J1" to="J4">
+        <lane id="E7_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E8" from="J4" to="J7">
+        <lane id="E8_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E9" from="J2" to="J5">
+        <lane id="E9_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E10" from="J5" to="J8">
+        <lane id="E10_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E11" from="J3" to="J6">
+        <lane id="E11_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+    <edge id="E12" from="J6" to="J9">
+        <lane id="E12_0" index="0" speed="13.9" length="200.0"/>
+    </edge>
+
+</net>
