@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Vehicle types -->
+    <vType id="ev" vClass="passenger" color="0,0,255" accel="2.6" decel="4.5" length="4.5" maxSpeed="13.9" guiShape="passenger"/>
+
+
+    <vehicle id="ev_0001" type="ev" depart="0" departLane="best" departSpeed="max">
+        <route edges="edge_A edge_B edge_C edge_D"/>
+    </vehicle>
+
+    <vehicle id="ev_0002" type="ev" depart="1" departLane="best" departSpeed="max">
+        <route edges="edge_B edge_D edge_E edge_F"/>
+    </vehicle>
+
+    <vehicle id="ev_0003" type="ev" depart="2" departLane="best" departSpeed="max">
+        <route edges="edge_C edge_F edge_G edge_H"/>
+    </vehicle>
+
+    <vehicle id="ev_0004" type="ev" depart="3" departLane="best" departSpeed="max">
+        <route edges="edge_H edge_G edge_E edge_A"/>
+    </vehicle>
+
+    <vehicle id="ev_0005" type="ev" depart="4" departLane="best" departSpeed="max">
+        <route edges="edge_D edge_B edge_A edge_H"/>
+    </vehicle>
+
+</routes>
