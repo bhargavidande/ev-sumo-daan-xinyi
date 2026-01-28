@@ -69,25 +69,6 @@
 
 ---
 
-### `appendices/AppendixA_user_pref.txt`
-- Contains per-EV preference data:
-  - EV ID
-  - Willingness parameter \( \lambda_i \)
-  - Parking duration preference
-  - Location preference score
-  - Cost sensitivity
-- Used by optimization and RL layers.
-
-### `appendices/parameters_table.csv`
-- Lists all simulation and system parameters:
-  - EV battery capacity
-  - Charging power
-  - Edge computation rates
-  - Weight coefficients \( w_1, w_2, w_3 \)
-  - Task sizes and workload distributions
-
----
-
 ## Scripts
 
 ### `scripts/generate_routes.py`
