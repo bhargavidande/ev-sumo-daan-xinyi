@@ -1,0 +1,55 @@
+from pathlib import Path
+import zipfile
+
+# Redefine paths due to environment reset
+base_dir = Path("/mnt/data/sumo-ev-pl-allocation")
+dirs = [
+    "network",
+    "routes",
+    "config",
+    "scripts",
+    "appendices"
+]
+
+# File contents
+files = {
+    "appendices/AppendixA_user_pref.txt": r"""
+The utility function \( U_i \) for EV_i is defined as:
+U_i = λ_i (w_1 f(D_i) + w_2 g(L_i) + w_3 h(V_i))
+
+Where:
+- D_i: Parking duration, sampled from truncated normal \( \mathcal{N}(120, 30^2) \) in [30, 240] min
+- L_ij: Location preference score = exp(-α * dist_ij), α = 0.005
+- V_i: Cost sensitivity level
+- λ_i: Willingness value (0.2 to 1.0 range), 0.2 = low, 1.0 = high willingness
+- w_1, w_2, w_3: Weights for duration, location, cost (default = 0.33 each)
+
+Driver’s utility is maximized when parking aligns with their preferred duration, location, and cost value.
+""",
+    "appendices/parameters_table.csv": """Parameter,Description,Default,Range
+mu_d,Mean duration (minutes),120,30-240
+sigma_d,Std dev for duration,30,-
+alpha,Location decay factor,0.005,-
+lambda_i,Willingness level,0.6,0.2-1.0
+w1,Weight for duration,0.33,0-1
+w2,Weight for location,0.33,0-1
+w3,Weight for value/cost,0.33,0-1"""
+}
+
+# Create directories
+for d in dirs:
+    (base_dir / d).mkdir(parents=True, exist_ok=True)
+
+# Write files
+for path, content in files.items():
+    full_path = base_dir / path
+    full_path.write_text(content.strip())
+
+# Create zip
+zip_path = Path("/mnt/data/sumo-ev-pl-allocation-appendix.zip")
+with zipfile.ZipFile(zip_path, 'w') as zipf:
+    for file_path in files:
+        full_path = base_dir / file_path
+        zipf.write(full_path, arcname=Path("sumo-ev-pl-allocation") / file_path)
+
+zip_path.name
