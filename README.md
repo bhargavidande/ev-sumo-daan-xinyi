@@ -79,8 +79,8 @@
 - Generates driver preference distributions:
   - Truncated normal distribution for parking duration
   - Gaussian distance-based location preference
-  - Willingness \( \lambda_i \in [0,1] \)
-- Outputs files used in Appendix A.
+  - Willingness 
+- Save outputs files.
 
 ---
 
