@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- Charging Station Definitions for EV Simulation -->
+
+    <!-- PL1: Near Office Zone -->
+    <chargingStation id="cs_PL1" lane="gneE2_0" startPos="10" endPos="30"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="25" />
+
+    <!-- PL2: Near Shopping Zone -->
+    <chargingStation id="cs_PL2" lane="gneE5_0" startPos="5" endPos="25"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="20" />
+
+    <!-- PL3: Residential Block A -->
+    <chargingStation id="cs_PL3" lane="gneE8_0" startPos="15" endPos="35"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="30" />
+
+    <!-- PL4: Residential Block B -->
+    <chargingStation id="cs_PL4" lane="gneE11_0" startPos="20" endPos="40"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="30" />
+
+    <!-- PL5: Tech Park Entry -->
+    <chargingStation id="cs_PL5" lane="gneE14_0" startPos="10" endPos="30"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="25" />
+
+    <!-- PL6: Government Office -->
+    <chargingStation id="cs_PL6" lane="gneE17_0" startPos="12" endPos="32"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="25" />
+
+    <!-- PL7: University Vicinity -->
+    <chargingStation id="cs_PL7" lane="gneE21_0" startPos="10" endPos="30"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="20" />
+
+    <!-- PL8: Hospital Zone -->
+    <chargingStation id="cs_PL8" lane="gneE24_0" startPos="8" endPos="28"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="25" />
+
+    <!-- PL9: Transit Hub -->
+    <chargingStation id="cs_PL9" lane="gneE28_0" startPos="10" endPos="30"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="30" />
+
+    <!-- PL10: Park Zone -->
+    <chargingStation id="cs_PL10" lane="gneE31_0" startPos="10" endPos="30"
+                     power="22000" efficiency="0.9" chargeDelay="0" numChargers="25" />
+
+</additional>
