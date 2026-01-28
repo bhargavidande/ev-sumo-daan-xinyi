@@ -99,12 +99,12 @@ python3 scripts/generate_routes.py
 
 python3 scripts/generate_pref_dist.py
 
-Step 3: Run SUMO
+### Step 3: Run SUMO
 
 sumo-gui -c config/daan_xinyi.sumocfg
 
 
-For headless execution:
+### For headless execution:
 
 sumo -c config/daan_xinyi.sumocfg
 
