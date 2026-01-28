@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="ev" vClass="passenger" color="0,0,255" accel="2.6" decel="4.5" length="4.5" maxSpeed="13.9" guiShape="passenger"/>
+
+    <!-- Define 4 flow patterns covering key mobility patterns in Daan–Xinyi -->
+    <flow id="flow_A" type="ev" begin="0" end="3600" number="500" from="edge_A" to="edge_F" departLane="best" departSpeed="max"/>
+    <flow id="flow_B" type="ev" begin="0" end="3600" number="500" from="edge_B" to="edge_E" departLane="best" departSpeed="max"/>
+    <flow id="flow_C" type="ev" begin="0" end="3600" number="500" from="edge_C" to="edge_D" departLane="best" departSpeed="max"/>
+    <flow id="flow_D" type="ev" begin="0" end="3600" number="500" from="edge_H" to="edge_A" departLane="best" departSpeed="max"/>
+</routes>
+  
