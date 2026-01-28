@@ -69,24 +69,6 @@
 
 ---
 
-##  Driver Preference and Willingness Modeling
-
-### Utility Function
-Each EV driver is modeled using a utility-based framework:
-
-\[
-U_i = \lambda_i \left( w_1 f(D_i) + w_2 g(L_i) + w_3 h(V_i) \right)
-\]
-
-Where:
-- \( D_i \): Parking duration preference  
-- \( L_i \): Location preference  
-- \( V_i \): Cost/value sensitivity  
-- \( \lambda_i \in [0,1] \): Willingness to comply with ESP scheduling  
-- \( w_1, w_2, w_3 \): Normalized weights  
-
----
-
 ### `appendices/AppendixA_user_pref.txt`
 - Contains per-EV preference data:
   - EV ID
