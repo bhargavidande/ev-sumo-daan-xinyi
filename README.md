@@ -58,7 +58,7 @@
   - Simulation duration
   - Step length
   - Output settings
-  - Random seed for reproducibility
+  - Random seed
 
 ### `config/additional.sumocfg`
 - Includes all additional elements:
